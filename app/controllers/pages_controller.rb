@@ -5,10 +5,10 @@ class PagesController < ApplicationController
   def about
   end
 
-  def equipment
+  def capabilities
   end
 
   def location
   end
-  
+
 end

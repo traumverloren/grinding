@@ -18,3 +18,5 @@
 
 # Mac finder artifacts
 .DS_Store
+
+.picasa.ini
