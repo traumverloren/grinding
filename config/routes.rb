@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get 'about' => "pages#about"
-  get 'capabilities' => "pages#capabilities"
   get 'location' => "pages#location"
 
 

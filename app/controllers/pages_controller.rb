@@ -5,9 +5,6 @@ class PagesController < ApplicationController
   def about
   end
 
-  def capabilities
-  end
-
   def location
   end
 

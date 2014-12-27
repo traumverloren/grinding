@@ -5,19 +5,25 @@
       <strong>Us</strong>
     </h2>
     <hr>
-    <p><strong>Address:</strong>
-      <br>101 Hollingsworth Drive
-      <br>Glencoe, AL 35905
-    </p>
-    <p><strong>Phone:</strong>
-      <br>256.494.0244
-    </p>
-    <p><strong>Fax:</strong>
-      <br>256.494.0257
-    </p>
-    <p><strong>Email:</strong>
-      <br><%= mail_to "nemethgrinding@cableone.net" %>
-    </p>
+    <div class="col-md-6">
+      <%= image_tag("james.jpg", :class => "img-responsive img-border-left") %>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Address:</strong>
+        <br>101 Hollingsworth Drive
+        <br>Glencoe, AL 35905
+      </p>
+      <p><strong>Phone:</strong>
+        <br>256.494.0244
+      </p>
+      <p><strong>Fax:</strong>
+        <br>256.494.0257
+      </p>
+      <p><strong>Email:</strong>
+        <br><%= mail_to "nemethgrinding@cableone.net" %>
+      </p>
+    </div>
+    <div class="clearfix"></div>
     <hr>
     <p>Have a question?  Want a quote?  Send us a message below, and we will get back as soon as possible.</p><br>
       <div class="row">
@@ -55,5 +61,6 @@
               <%= f.submit "Submit", class: "btn btn-default" %>
             </div>
           <% end %>
+        </div>
     </div>
 </div>
