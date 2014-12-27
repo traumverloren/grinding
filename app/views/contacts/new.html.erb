@@ -1,47 +1,59 @@
-<div class="row">
-  <div class="box">
-    <div class="col-lg-12">
-      <hr>
-      <h2 class="intro-text text-center">Contact
-        <strong>Form</strong>
-      </h2>
-      <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
-        <div class="row">
-          <%= form_for @contact, html: { :multipart => true } do |f| %>
-            <% if @contact.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class="box">
+  <div class="col-lg-12">
+    <hr>
+    <h2 class="intro-text text-center">Contact
+      <strong>Us</strong>
+    </h2>
+    <hr>
+    <p><strong>Address:</strong>
+      <br>101 Hollingsworth Drive
+      <br>Glencoe, AL 35905
+    </p>
+    <p><strong>Phone:</strong>
+      <br>256.494.0244
+    </p>
+    <p><strong>Fax:</strong>
+      <br>256.494.0257
+    </p>
+    <p><strong>Email:</strong>
+      <br><%= mail_to "nemethgrinding@cableone.net" %>
+    </p>
+    <hr>
+    <p>Have a question?  Want a quote?  Send us a message below, and we will get back as soon as possible.</p><br>
+      <div class="row">
+        <%= form_for @contact, html: { :multipart => true } do |f| %>
+          <% if @contact.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-                <ul>
-                <% @article.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-                </ul>
-              </div>
-            <% end %>
+              <ul>
+              <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
+          <div class="form-group col-lg-12">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="form-group col-lg-12">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: "form-control" %>
+            </div>
+            <div class="form-group col-lg-12">
+              <%= f.label :phone %>
+              <%= f.text_field :phone, class: "form-control" %>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group col-lg-12">
+              <%= f.label :message %>
+              <%= f.text_area :message, as: :text, :rows => "6", class: "form-control" %>
+            </div>
             <div class="form-group col-lg-4">
-              <%= f.label :name %>
-              <%= f.text_field :name, class: "form-control" %>
-              </div>
-              <div class="form-group col-lg-4">
-                <%= f.label :email %>
-                <%= f.text_field :email, class: "form-control" %>
-              </div>
-              <div class="form-group col-lg-4">
-                <%= f.label :phone %>
-                <%= f.text_field :phone, class: "form-control" %>
-              </div>
-              <div class="clearfix"></div>
-              <div class="form-group col-lg-12">
-                <%= f.label :content %>
-                <%= f.text_field :content, as: :text, class: "form-control" %>
-              </div>
-              <div class="form-group col-lg-4">
-                <%= f.submit class: 'btn btn-default' %>
-              </div>
-            <% end %>
-      </div>
-  </div>
+              <%= f.submit "Submit", class: "btn btn-default" %>
+            </div>
+          <% end %>
+    </div>
 </div>
